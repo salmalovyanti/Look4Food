@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Look4Food</title>
+    <link rel="stylesheet" href="Look4FoodStyle.css">
+    <script>
+        // Fungsi untuk menampilkan alert jika ada pesan di URL
+        function showAlertFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            const message = params.get('message');
+            if (message) {
+                alert(message);
+            }
+        }
+    </script>
+</head>
+<body onload="showAlertFromURL()">
+    <header>
+        <h2 class="logo">Look 4 Food</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <button id="loginBtn" class="nav-btn">Log In</button>
+            <button id="signupBtn" class="nav-btn">Sign Up</button>
+        </nav>
+    </header>
+    
+    <!-- landing page -->
+    <div class="welcome-pad">
+        <div class="welcome">
+            <img src="img/welc.jpg" id="welcomingpic">
+            <div class="box">
+                <div class="left-wel">
+                    <h2 id="text">Can't decide yet?</h2>
+                    <div class="wel-msg">Discover and share us what you're tummy desires!</div> 
+                    <nav>
+                        <a class="discover" href="#about">Discover More</a>
+                    </nav>                    
+                </div>
+                <div class="right-wel"></div>
+            </div>
+        </div>        
+    </div>
+
+    <!-- Services -->
+    <section class="sec-2">
+       <h3>View restaurants by services</h3>
+       <br>
+        <div class="rest-type">
+            <div class="rest-type-col-1">
+                <div class="rest-type-img-1">
+                    <img class="rest-type-img" src="img/dine.avif" id="welcomingpic">   
+                </div>
+                <div class="rest-type-half-1">
+                    <p class="rest-type-col-text">DINE IN</p>
+                </div>
+            </div>
+            <div class="rest-type-col-2">
+                <p>OR</p>
+            </div>
+            <div class="rest-type-col-1">
+                <div class="rest-type-img-1">
+                    <img class="rest-type-img" src="img/take.avif" id="welcomingpic">   
+                </div>
+                <div class="rest-type-half-1">
+                    <p class="rest-type-col-text">TAKE AWAY</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisines Question -->
+     <div class="box">
+         <section class="land-quest">
+            <h2>What are you in the mood for today?</h2>
+            <button onclick="redirectToBrowse()" id="brwallBtn">Browse All Restaurants</button> 
+        </section>
+        <img class="land-quest-img" src="img/cuis.jpg" alt="">        
+    </div>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <h2>About Us</h2>
+            <img src="img/img2.jpg" alt="">
+        </div>
+        <div class="about-text">
+            <h4 class="about-text-1">Look4Food is a web-based restaurant aggregator that brings a world of flavors right to your fingertips.</h4>
+            <h4 class="about-text-1">We are dedicated to helping food lovers discover and enjoy the best dining experiences, whether they're looking for a cozy café, a bustling street food stall, or a fine dining establishment.</h4>
+            <br>
+            <br>
+            <h4 class="about-text-2">Join us on this delicious quest and let us be your compass in the diverse world of food!</h4>
+        </div>
+    </section>
+
+    <footer>
+        <div class="in-footer-1">
+            <h2>Look 4 Food</h2>
+        </div>
+        <p class="by">©Created by Group 7 - B - Informatika</p> 
+        <div class="team">
+            <div class="in-team">
+                <p>Deliana Wahyukusumaningati</p>
+                <p>2210511047</p>
+            </div>
+            <div class="in-team">
+                <p>Widya Amellia Putri</p>
+                <p>2210511052</p>
+            </div>
+            <div class="in-team">
+                <p>Salma Nabila Lovyanti</p>
+                <p>2210511069</p>
+            </div>
+            <div class="in-team">
+                <p>Wira Febriyani</p>
+                <p>2329915071</p>
+            </div>
+        </div>      
+    </footer> 
+     
+    <!-- Sign Up Modal -->
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" action="" method="post">
+            <div class="container1">
+                <h4 class="sign-txt">Sign Up</h4>
+                <hr class="sign-hr">
+                <label for="username"><b>Username</b></label>
+                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                <label for="email"><b>Email</b></label>
+                <input type="text" id="email" name="email" placeholder="Enter Email" required>
+                <label for="password"><b>Password</b></label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <label for="nama_user"><b>Name</b></label>
+                <input type="text" id="nama_user" name="nama_user" placeholder="Enter Name" required>
+                <label for="location"><b>Location</b></label>
+                <input type="text" id="location" name="location" placeholder="Enter Location" required>
+                <div class="clearfix">
+                    <div class="box">
+                        <div class="name-col1">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                        <div class="name-col2">
+                            <button type="submit" class="conf-btn">Sign Up</button>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Log In Modal -->
+    <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" action="" method="post">
+            <div class="container1">
+                <h4 class="sign-txt">Log In</h4>
+                <hr class="sign-hr">
+                <label for="username"><b>Username</b></label>
+                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                <label for="password"><b>Password</b></label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <div class="clearfix">
+                    <div class="box">
+                        <div class="name-col1">
+                            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                        <div class="name-col2">
+                            <button type="submit" class="conf-btn">Log in</button>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="L4F.js"></script>
+</body>
+</html>
